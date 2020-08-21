@@ -672,7 +672,7 @@ UINT __stdcall TerminateProcessesCA(MSIHANDLE hInstall)
 
 UINT __stdcall CertifyVirtualCameraDriverCA(MSIHANDLE hInstall)
 {
-#ifdef CIBuild
+#ifdef CIBuild // On pipeline we are using microsoft certification
     WcaInitialize(hInstall, "CertifyVirtualCameraDriverCA");
     return WcaFinalize(ERROR_SUCCESS);
 #else
